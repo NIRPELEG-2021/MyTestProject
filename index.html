@@ -3,10 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Project</title>
+    <title>Counter App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>Welcome to My New Project</h1>
+<body class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
+    <div class="text-center">
+        <h1 class="text-6xl font-bold text-gray-800 mb-8" id="counter">0</h1>
+        <div class="flex gap-4 justify-center">
+            <button 
+                id="decreaseBtn" 
+                class="bg-red-500 hover:bg-red-600 text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105 active:scale-95"
+            >
+                Decrease
+            </button>
+            <button 
+                id="resetBtn" 
+                class="bg-gray-500 hover:bg-gray-600 text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105 active:scale-95"
+            >
+                Reset
+            </button>
+            <button 
+                id="increaseBtn" 
+                class="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105 active:scale-95"
+            >
+                Increase
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Initialize counter state
+        let count = 0;
+        
+        // Get DOM elements
+        const counterElement = document.getElementById('counter');
+        const increaseBtn = document.getElementById('increaseBtn');
+        const decreaseBtn = document.getElementById('decreaseBtn');
+        const resetBtn = document.getElementById('resetBtn');
+
+        // Function to update the counter display
+        function updateCounter() {
+            counterElement.textContent = count;
+        }
+
+        // Handle Increase button click
+        increaseBtn.addEventListener('click', () => {
+            count++;
+            updateCounter();
+        });
+
+        // Handle Decrease button click
+        decreaseBtn.addEventListener('click', () => {
+            count--;
+            updateCounter();
+        });
+
+        // Handle Reset button click
+        resetBtn.addEventListener('click', () => {
+            count = 0;
+            updateCounter();
+        });
+    </script>
 </body>
 </html>
-
