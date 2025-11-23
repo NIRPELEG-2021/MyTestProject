@@ -28,6 +28,12 @@
             >
                 Increase
             </button>
+            <button 
+                id="demoBtn" 
+                class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105 active:scale-95"
+            >
+                Demo
+            </button>
         </div>
     </div>
 
@@ -40,6 +46,7 @@
         const increaseBtn = document.getElementById('increaseBtn');
         const decreaseBtn = document.getElementById('decreaseBtn');
         const resetBtn = document.getElementById('resetBtn');
+        const demoBtn = document.getElementById('demoBtn');
 
         // Function to update the counter display
         function updateCounter() {
@@ -62,6 +69,11 @@
         resetBtn.addEventListener('click', () => {
             count = 0;
             updateCounter();
+        });
+
+        // Handle Demo button click
+        demoBtn.addEventListener('click', () => {
+            alert('Demo button clicked!');
         });
     </script>
 </body>
